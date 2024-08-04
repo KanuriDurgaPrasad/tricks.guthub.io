@@ -1,0 +1,59 @@
+/* This converts everything that's EM to PX at 1440px & above screen sizes */
+@media only screen and (min-width: 1440px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  
+  @media only screen and (min-width: 1920px) {
+    .container.is--hero {
+      min-height: auto;
+      height: 100vh;
+      max-height: 1000px;
+    }
+  }
+  
+  /* Homepage CSS */
+  .hero__icon,
+  .hero__card-text,
+  .hero__gradient {
+    pointer-events: none;
+  }
+  
+  .hero__card {
+    backdrop-filter: blur(2em);
+    -webkit-backdrop-filter: blur(2em);
+  }
+  
+  .hero__card-content {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  }
+  
+  .hero__card:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    pointer-events: none;
+  }
+  
+  @keyframes scroll {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .scroll__left {
+    animation: scroll 2s infinite;
+  }
+  
